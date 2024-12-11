@@ -82,9 +82,10 @@ ul li {
 /* Container for Image Gallery */
 #data-cleaning .images-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 20px;
     flex-wrap: wrap;
+    align-items: stretch;
 }
 
 /* Ensure all plot containers are the same height */
