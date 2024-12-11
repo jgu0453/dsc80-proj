@@ -28,6 +28,25 @@
             max-width: 100%;
             height: auto;
         }
+        
+        #data-cleaning .images-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px; /* Space between the images */
+        }
+
+        /* Ensure that the images and their labels are centered */
+        #data-cleaning .plot-container {
+            text-align: center;
+        }
+
+        /* Make sure images don't overflow */
+        #data-cleaning .plot-container img {
+            max-width: 100%;
+            height: auto;
+            width: 300px; /* Set a consistent size for the images */
+        }
     </style>
 </head>
 <body>
@@ -58,23 +77,25 @@
     <section id="data-cleaning">
         <h2>Data Cleaning and Exploratory Data Analysis</h2>
         <p>We cleaned the dataset by replacing placeholders with NaN values, removing irrelevant columns (e.g., IDs), and creating new features such as "gold_per_minute." Below is the summary of the cleaned DataFrame:</p>
-        <div class="plot-container">
-            <img src="data_cleaning.png" alt="Summary of the cleaned DataFrame">
-        </div>
-        <div class="plot-container">
-            <h3>Distribution of Game Length</h3>
-            <img src="game_length.png">
-            <p>The plot above shows the distribution of game length, with most matches lasting between 20 to 40 minutes.</p>
-        </div>
-        <div class="plot-container">
-            <h3>Distribution of Gold per Minute</h3>
-            <img src="Gold_per_min.png">
-            <p>This plot highlights how well esports players generate gold per minute.</p>
-        </div>
-        <div class="plot-container">
-            <h3>Gold Difference at 15 Minutes by League</h3>
-            <img src="gold_diff.png">
-            <p>This plot highlights how different leagues vary in their gold differences at 15 minutes, showcasing disparities in early-game strategies.</p>
+    
+        <!-- Container for all images aligned in one row, only for this section -->
+        <div class="images-container">
+            <div class="plot-container">
+                <img src="data_cleaning.png" alt="Summary of the cleaned DataFrame">
+                <p>Summary of the cleaned DataFrame</p>
+            </div>
+            <div class="plot-container">
+                <img src="game_length.png" alt="Distribution of Game Length">
+                <p>The plot above shows the distribution of game length, with most matches lasting between 20 to 40 minutes.</p>
+            </div>
+            <div class="plot-container">
+                <img src="Gold_per_min.png" alt="Distribution of Gold per Minute">
+                <p>This plot highlights how well esports players generate gold per minute.</p>
+            </div>
+            <div class="plot-container">
+                <img src="gold_diff.png" alt="Gold Difference at 15 Minutes by League">
+                <p>This plot highlights how different leagues vary in their gold differences at 15 minutes, showcasing disparities in early-game strategies.</p>
+            </div>
         </div>
     </section>
 
