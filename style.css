@@ -70,7 +70,8 @@ ul li {
     margin-bottom: 20px;
 }
 
-img {
+/* Remove image hover effect */
+.plot-container img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
@@ -90,6 +91,16 @@ img {
     min-width: 300px;
     max-width: 350px;
     margin-bottom: 20px;
+}
+
+/* Center the first image (Summary of cleaned data) */
+#data-cleaning .plot-container:first-of-type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%; /* Make it full width to center properly */
 }
 
 /* Header Section (Fixed Styling for Spacing) */
@@ -122,3 +133,16 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer, if you add one later */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 40px;
+}
