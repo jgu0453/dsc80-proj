@@ -127,18 +127,18 @@ ul ul {
 
 #data-cleaning .images-container {
     display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    flex-wrap: wrap;
-    align-items: flex-start;
+    justify-content: center; /* Center all plot containers */
+    gap: 20px; /* Space between each container */
+    flex-wrap: wrap; /* Wrap containers to a new line if needed */
     margin-top: 20px;
+    align-items: stretch; /* Make all containers equal height */
 }
 
 #data-cleaning .plot-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 1 1 30%;
+    flex: 1 1 calc(33.333% - 40px); /* Three containers per row, minus the gap */
     max-width: 350px;
     min-width: 300px;
     margin-bottom: 20px;
@@ -147,14 +147,16 @@ ul ul {
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    box-sizing: border-box; /* Include padding in the dimensions */
 }
 
 #data-cleaning .plot-container img {
-    max-width: 100%;
-    height: auto;
+    width: 100%; /* Make images scale to container width */
+    height: 200px; /* Fix a consistent height for all images */
+    object-fit: cover; /* Maintain aspect ratio and fill the container */
     border-radius: 8px;
     margin-bottom: 10px;
-    border: 2px solid #007bff; /* Subtle border to add emphasis */
+    border: 2px solid #007bff; /* Subtle border for emphasis */
 }
 
 #data-cleaning .plot-container p {
@@ -163,7 +165,6 @@ ul ul {
     color: #666;
     text-align: center;
 }
-
 /* Footer Styling */
 footer {
     background: #0056b3; /* Matches the header for a cohesive look */
