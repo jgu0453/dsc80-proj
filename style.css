@@ -93,6 +93,7 @@ ul li {
     min-width: 300px;
     max-width: 350px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 /* Center the first image (Summary of cleaned data) */
