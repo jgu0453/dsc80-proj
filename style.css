@@ -71,23 +71,26 @@ a {
     font-weight: bold;
 }
 
-/* Bullet Point Styling */
+/* General Styling for Bullet Points */
 ul {
-    margin-left: 30px; /* Adds spacing from the left side */
-    font-size: 1.1rem;
+    padding-left: 40px; /* Adds proper spacing inside the element */
+    margin-top: 10px; /* Adds spacing above the list */
+    margin-bottom: 20px; /* Adds spacing below the list */
+    list-style-type: disc; /* Standard bullet points */
     color: #555;
-    list-style-type: disc; /* Ensures default bullet styling */
+    font-size: 1.1rem;
 }
 
 ul li {
-    margin-bottom: 10px; /* Adds space between each bullet point */
-    line-height: 1.6; /* Improves readability */
+    margin-bottom: 10px; /* Spacing between bullet items */
+    line-height: 1.7; /* Improves readability */
 }
 
-/* Ensure consistent padding and spacing for nested lists */
+/* Nested Lists Styling */
 ul ul {
-    margin-left: 20px; /* Adds extra indentation for nested lists */
-    list-style-type: circle; /* Changes bullet style for nested lists */
+    padding-left: 20px; /* Additional indentation for nested lists */
+    list-style-type: circle; /* Different bullet style for nested lists */
+    margin-bottom: 10px;
 }
 
 /* Container for Images */
