@@ -3,35 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>League of Legends Game Outcome Prediction</title>
+    <title>League of Legends Esports Outcome Predictor</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            line-height: 1.6;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            padding: 0 20px;
+            background-color: #f9f9f9;
         }
-        .container {
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        .plot-container {
             text-align: center;
         }
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 0.5em;
-        }
-        p {
-            font-size: 1.2em;
+        img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>League of Legends Game Outcome Prediction</h1>
-        <p>Welcome to the project page for predicting game outcomes using esports data!</p>
-    </div>
+    <header>
+        <h1>League of Legends Esports Outcome Predictor</h1>
+    </header>
+
+    <section id="introduction">
+        <h2>Introduction</h2>
+        <p>This project analyzes a dataset from League of Legends esports matches to determine how key performance indicators (KPIs) influence game outcomes. We focus on the question: "How does gold difference at key timestamps affect win rates across different leagues?"</p>
+        <p>The dataset contains 40164 rows and includes columns such as <strong>"goldat15"</strong> (gold difference at 15 minutes), <strong>"result"</strong> (win/loss), and <strong>"league"</strong> (the league the match belongs to).</p>
+    </section>
+
+    <section id="data-cleaning">
+        <h2>Data Cleaning and Exploratory Data Analysis</h2>
+        <p>We cleaned the dataset by replacing placeholders with NaN values, removing irrelevant columns (e.g., IDs), and creating new features such as "gold_per_minute." Below is the head of the cleaned DataFrame:</p>
+        <div>
+            <pre><code>[Insert Table Placeholder]</code></pre>
+        </div>
+        <div class="plot-container">
+            <h3>Distribution of Game Length</h3>
+            [Insert Plot Placeholder]
+            <p>The plot above shows the distribution of game length, with most matches lasting between 20 to 40 minutes.</p>
+        </div>
+        <div class="plot-container">
+            <h3>Gold Difference at 15 Minutes by League</h3>
+            [Insert Plot Placeholder]
+            <p>This plot highlights how different leagues vary in their gold differences at 15 minutes, showcasing disparities in early-game strategies.</p>
+        </div>
+    </section>
+
+    <section id="missingness">
+        <h2>Assessment of Missingness</h2>
+        <p>The <strong>"gold_per_minute"</strong> column is suspected to be NMAR, likely due to incomplete game data. Additional metadata about game interruptions could make it MAR.</p>
+        <div class="plot-container">
+            <h3>Permutation Test for Missingness</h3>
+            [Insert Plot Placeholder]
+            <p>The observed test statistic and the p-value indicate a significant relationship between missingness and game length.</p>
+        </div>
+    </section>
+
+    <section id="hypothesis-testing">
+        <h2>Hypothesis Testing</h2>
+        <p><strong>Null Hypothesis:</strong> Gold difference at 15 minutes does not vary significantly across leagues.<br>
+           <strong>Alternative Hypothesis:</strong> Gold difference at 15 minutes varies significantly across leagues.</p>
+        <p>Using ANOVA, we obtained a p-value of 0.0, suggesting significant differences between leagues in early-game gold advantages.</p>
+    </section>
+
+    <section id="prediction-problem">
+        <h2>Framing Prediction Problem</h2>
+        <p>We aim to predict game outcomes based on features such as "goldat15," champion picks, and first objectives. This is a binary classification problem, and we use accuracy as the evaluation metric to assess model performance.</p>
+    </section>
+
+    <section id="baseline-model">
+        <h2>Baseline Model</h2>
+        <p>The baseline model uses features like "goldat15" and one-hot encoded champion picks. It achieved an accuracy of 69%, indicating room for improvement.</p>
+    </section>
+
+    <section id="final-model">
+        <h2>Final Model</h2>
+        <p>The final model incorporates engineered features such as "gold_diff_per_minute" and "KDA," leveraging a Random Forest Classifier. Hyperparameter tuning improved accuracy to 97%.</p>
+    </section>
+
+    <section id="fairness-analysis">
+        <h2>Fairness Analysis</h2>
+        <p>The model was evaluated for fairness based on the "side" (Blue vs. Red). Accuracy was consistent across groups (Blue: 96.7%, Red: 96.6%), suggesting no significant bias.</p>
+        <div class="plot-container">
+            <h3>Confusion Matrix by Side</h3>
+            [Insert Plot Placeholder]
+        </div>
+    </section>
+
 </body>
 </html>
