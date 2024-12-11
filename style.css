@@ -100,6 +100,14 @@ ul li {
     text-align: center;
 }
 
+/* Descriptions below each image */
+#data-cleaning .plot-container p {
+    margin-top: 10px; /* Space between the image and description */
+    font-size: 1rem;
+    color: #555;
+    text-align: center;
+}
+
 /* Center the first image (Summary of cleaned data) */
 #data-cleaning .plot-container:first-of-type {
     display: flex;
