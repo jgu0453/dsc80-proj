@@ -93,6 +93,16 @@ ul ul {
     margin-bottom: 10px;
 }
 
+/* Center the first image (Summary of cleaned data) */
+#data-cleaning .plot-container:first-of-type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%; /* Make it full width to center properly */
+}
+
 /* Container for Images */
 .plot-container {
     margin-bottom: 20px;
