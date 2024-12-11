@@ -212,7 +212,52 @@
 
     <section id="final-model">
         <h2>Final Model</h2>
-        <p>The final model incorporates engineered features such as "gold_diff_per_minute" and "KDA," leveraging a Random Forest Classifier. Hyperparameter tuning improved accuracy to 97%.</p>
+        
+        <h3>Additional Features</h3>
+        <p>In the final model, several new features were added to improve the prediction of match outcomes. These features were selected based on their relevance to the data generating process and the potential insights they provide into team performance:</p>
+        <ul>
+            <li><strong>gold_diff_per_minute:</strong> The difference in gold earned per minute between the two teams, adjusted for game length. This feature highlights the relative economic advantage of a team during the match, which can be critical in predicting the winner.</li>
+            <li><strong>KDA (Kills, Deaths, Assists ratio):</strong> This metric reflects a player's overall performance in terms of kills, deaths, and assists, which are directly linked to a team’s success in fights and objectives. It provides insight into the efficiency and impact of the team's individual players.</li>
+            <li><strong>gold_share:</strong> The proportion of the team's gold relative to the total gold on the map. A higher gold share can indicate a more impactful team composition, often correlating with better performance.</li>
+        </ul>
+        <p>These features were selected because they offer deeper insights into the team's economic and individual performance during the match, which are crucial for predicting the match outcome. By considering these metrics, the model gains a better understanding of the relative strength of the teams, helping to make more accurate predictions.</p>
+    
+        <h3>Modeling Algorithm</h3>
+        <p>For the final model, we chose the <strong>Random Forest Classifier</strong>, a robust ensemble learning method that is well-suited for handling complex, high-dimensional datasets. The Random Forest algorithm aggregates predictions from multiple decision trees, reducing overfitting and improving generalization.</p>
+        
+        <h3>Hyperparameter Tuning</h3>
+        <p>We used <strong>GridSearchCV</strong> to optimize the hyperparameters of the Random Forest model. The grid search was performed over the following parameters:</p>
+        <ul>
+            <li><strong>n_estimators:</strong> Number of trees in the forest (100, 200).</li>
+            <li><strong>max_depth:</strong> Maximum depth of the trees (None, 10, 20).</li>
+            <li><strong>min_samples_split:</strong> Minimum number of samples required to split an internal node (2, 5, 10).</li>
+        </ul>
+        <p>The best hyperparameters identified through grid search were:</p>
+        <pre>Best Hyperparameters: {'classifier__max_depth': None, 'classifier__min_samples_split': 5, 'classifier__n_estimators': 200}</pre>
+    
+        <h3>Final Model Performance</h3>
+        <p>After training the final model with the optimal hyperparameters, we evaluated its performance on the test set. The results show a significant improvement in both accuracy and overall classification performance compared to the baseline model:</p>
+        <ul>
+            <li><strong>Accuracy:</strong> The final model achieved an impressive accuracy of <strong>0.97</strong>, significantly higher than the baseline model’s accuracy of 0.69.</li>
+            <li><strong>Classification Report:</strong></li>
+        </ul>
+        <pre>
+            precision    recall  f1-score   support
+    
+               0       0.97      0.96      0.97      1699
+               1       0.96      0.97      0.97      1673
+    
+        accuracy                           0.97      3372
+        macro avg       0.97      0.97      0.97      3372
+        weighted avg    0.97      0.97      0.97      3372
+        </pre>
+    
+        <h3>Interpretation of Model Performance</h3>
+        <p>The final model’s accuracy of 0.97 represents a significant improvement over the baseline model’s 0.69. Both precision and recall are exceptionally high for both classes, with the f1-scores exceeding 0.97. This indicates that the model is highly accurate and reliable in predicting the outcome of the matches. The balanced performance across both classes (team winning and losing) suggests that the model is robust and not biased toward any particular outcome.</p>
+    
+        <h3>Conclusion</h3>
+        <p>By adding new features such as gold difference, KDA, and gold share, and using a Random Forest Classifier with tuned hyperparameters, the final model has achieved exceptional performance. The model’s accuracy has increased substantially, providing a much stronger prediction of match outcomes compared to the baseline model. The high precision and recall values further confirm the model’s reliability and effectiveness. With these improvements, the final model offers a solid and practical solution for predicting the outcome of future matches.</p>
+    
     </section>
 
     <section id="fairness-analysis">
