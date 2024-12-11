@@ -109,8 +109,9 @@ ul ul {
 }
 
 #data-cleaning .images-container img:first-of-type {
-    display: block;
-    margin: 0 auto; /* This centers the first image */
+    display: flex;
+    justify-content: center; /* Centers the items horizontally */
+    align-items: center; /* Centers the items vertically */
     max-width: 100%; /* Ensure the image fits within the container */
     height: auto; /* Keep aspect ratio intact */
 }
