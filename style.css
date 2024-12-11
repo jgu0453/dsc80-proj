@@ -93,6 +93,16 @@ ul ul {
     margin-bottom: 10px;
 }
 
+/* Center the first image (Summary of cleaned data) */
+#data-cleaning .plot-container:first-of-type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%; /* Make it full width to center properly */
+}
+
 /* Container for Images */
 .plot-container {
     margin-bottom: 20px;
@@ -106,14 +116,6 @@ ul ul {
     height: auto;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-#data-cleaning .images-container img:nth-child(1) {
-    display: flex;
-    justify-content: center; /* Centers the items horizontally */
-    align-items: center; /* Centers the items vertically */
-    max-width: 100%; /* Ensure the image fits within the container */
-    height: auto; /* Keep aspect ratio intact */
 }
 
 #data-cleaning .images-container {
