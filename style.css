@@ -87,10 +87,14 @@ ul li {
     flex-wrap: wrap;
 }
 
+/* Ensure all plot containers are the same height */
 #data-cleaning .plot-container {
-    flex: 1;
-    min-width: 300px;
-    max-width: 350px;
+    display: flex;
+    flex-direction: column; /* Stack the image and description vertically */
+    align-items: center;
+    flex: 1 1 30%; /* Flex-grow, flex-shrink, and basis for equal spacing */
+    max-width: 350px; /* Set a maximum width for consistent sizing */
+    min-width: 300px; /* Ensure minimum width for smaller screens */
     margin-bottom: 20px;
     text-align: center;
 }
