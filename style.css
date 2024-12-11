@@ -125,23 +125,23 @@ ul ul {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Container for Image Gallery */
 #data-cleaning .images-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 20px;
     flex-wrap: wrap;
-    align-items: flex-start;
-    margin-top: 20px;
+    align-items: stretch;
 }
 
 #data-cleaning .plot-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 1 1 30%;
-    max-width: 350px;
-    min-width: 300px;
-    margin-bottom: 20px;
+    flex: 1 1 30%; /* Flex-grow, flex-shrink, and basis for equal spacing */
+    max-width: 350px; /* Ensure all images have the same max width */
+    min-width: 300px; /* Ensure a minimum width for smaller screens */
+    margin-bottom: 20px; /* Space between images */
     text-align: center;
     background: #ffffff;
     border-radius: 12px;
@@ -150,15 +150,16 @@ ul ul {
 }
 
 #data-cleaning .plot-container img {
-    max-width: 100%;
-    height: auto;
+    width: 100%; /* Ensure images take up full width of their container */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 300px; /* Ensures images don't grow too tall */
+    object-fit: cover; /* Maintain aspect ratio while covering the box */
     border-radius: 8px;
-    margin-bottom: 10px;
-    border: 2px solid #007bff; /* Subtle border to add emphasis */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 #data-cleaning .plot-container p {
-    margin-top: 10px;
+    margin-top: 10px; /* Space between image and description */
     font-size: 1rem;
     color: #666;
     text-align: center;
