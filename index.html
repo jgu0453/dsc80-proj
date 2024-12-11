@@ -105,11 +105,35 @@
         </div>
     </section>
     
-    <section id="hypothesis-testing">
-        <h2>Hypothesis Testing</h2>
-        <p><strong>Null Hypothesis:</strong> Gold difference at 15 minutes does not vary significantly across leagues.<br>
-           <strong>Alternative Hypothesis:</strong> Gold difference at 15 minutes varies significantly across leagues.</p>
-        <p>Using ANOVA, we obtained a p-value of 0.0, suggesting significant differences between leagues in early-game gold advantages.</p>
+    <section id="hypothesis-test">
+        <h2>Hypothesis Test: Team Performance Analysis</h2>
+        
+        <h3>Null and Alternative Hypotheses</h3>
+        <p><strong>Null Hypothesis (H₀):</strong> There is no significant difference in the win rates between the different teams.</p>
+        <p><strong>Alternative Hypothesis (H₁):</strong> There is a significant difference in the win rates between the different teams.</p>
+        
+        <h3>Test Statistic</h3>
+        <p>To test these hypotheses, we performed a one-way ANOVA (Analysis of Variance) test, which compares the mean win rates across multiple teams. The test statistic is an F-statistic, which measures the variance between group means relative to the variance within the groups.</p>
+    
+        <h3>Test Results</h3>
+        <p>The result of the ANOVA test is as follows:</p>
+        <ul>
+            <li><strong>F-statistic:</strong> 24.71</li>
+            <li><strong>p-value:</strong> 0.0</li>
+        </ul>
+        <p>The p-value is extremely small (0.0), which suggests that there is strong evidence against the null hypothesis. Therefore, we reject the null hypothesis and conclude that there are significant differences in the win rates between the teams.</p>
+        
+        <h3>LPL vs. LDL Performance</h3>
+        <p>We also compared the win rates of two specific leagues: LPL and LDL. The win rates for both leagues are:</p>
+        <ul>
+            <li><strong>LPL:</strong> 0.5</li>
+            <li><strong>LDL:</strong> 0.5</li>
+        </ul>
+        <p>Interestingly, both leagues have the same win rate of 0.5, suggesting no significant difference in performance between the two leagues based on this metric.</p>
+    
+        <h3>Conclusion</h3>
+        <p>Based on the ANOVA test, we reject the null hypothesis and conclude that there is a significant difference in win rates among the teams in the dataset. However, when comparing LPL and LDL, there is no observable difference in win rates, as both leagues have identical performance metrics.</p>
+        
     </section>
 
     <section id="prediction-problem">
