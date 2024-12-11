@@ -83,7 +83,29 @@
 
     <section id="prediction-problem">
         <h2>Framing Prediction Problem</h2>
-        <p>We aim to predict game outcomes based on features such as "goldat15," champion picks, and first objectives. This is a binary classification problem, and we use accuracy as the evaluation metric to assess model performance.</p>
+        <p>The problem we are addressing is a binary classification task. The goal is to predict whether a professional League of Legends team will win or lose a match based on various in-game performance metrics and events up to a certain point in the match. The response variable for this problem is <strong>result</strong>, where a win is labeled as 1 and a loss is labeled as 0. We chose this variable because it directly captures the outcome of the game and aligns with our goal of understanding the factors contributing to victory in competitive matches.</p>
+        <p><strong>Evaluation Metric:</strong> To evaluate our model, we use accuracy as the primary performance metric. Accuracy was chosen because our dataset has a relatively balanced distribution of wins and losses, making it a suitable metric for measuring overall performance. However, if class imbalance were present, we would also consider metrics such as F1-score to account for both precision and recall. Accuracy provides a straightforward way to assess how well the model predicts the correct outcomes, which aligns with our objective of understanding win predictors.</p>
+        <p><strong>Features and Time of Prediction:</strong> When selecting features for the model, we ensured that all the features used for prediction are available at the time of prediction during a match. Specifically, we used the following features:</p>
+        <ul>
+            <li><strong>Numerical Features:</strong>
+                <ul>
+                    <li><strong>goldat15:</strong> Total gold earned by the team at 15 minutes.</li>
+                    <li><strong>gold_diff_per_minute:</strong> The gold difference per minute between the team and their opponent.</li>
+                    <li><strong>KDA:</strong> Kill-death-assist ratio, a performance metric reflecting player effectiveness.</li>
+                    <li><strong>gold_share:</strong> Proportion of the total gold earned by the team.</li>
+                </ul>
+            </li>
+            <li><strong>Categorical Features:</strong>
+                <ul>
+                    <li><strong>pick1, pick2, pick3, pick4, pick5:</strong> Champions picked by the team during the draft phase.</li>
+                    <li><strong>firstblood:</strong> Indicator of whether the team secured the first kill.</li>
+                    <li><strong>firstdragon:</strong> Indicator of whether the team secured the first dragon.</li>
+                    <li><strong>firstherald:</strong> Indicator of whether the team secured the first Rift Herald.</li>
+                </ul>
+            </li>
+        </ul>
+        <p>These features are carefully chosen to ensure they reflect in-game actions and states that occur before the match outcome is determined. For example, champion picks are decided during the draft phase, and early-game events such as securing the first blood or first dragon happen early in the match. These features allow the model to make predictions based on information that would be known at the time of prediction, maintaining the integrity and real-world applicability of our analysis.</p>
+        <p>By carefully constructing the model and evaluation pipeline, we aim to provide actionable insights into the key factors that influence a team's success in professional League of Legends matches.</p>
     </section>
 
     <section id="baseline-model">
