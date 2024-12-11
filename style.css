@@ -7,14 +7,16 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f9f9f9;
     line-height: 1.6;
     padding: 0 15px;
     color: #333;
+    background: linear-gradient(to bottom, #ffffff, #f1f1f1);
 }
 
+/* Header Section */
 header {
-    background-color: #4CAF50;
+    background: linear-gradient(90deg, #4CAF50, #2E7D32);
     color: white;
     padding: 20px;
     text-align: center;
@@ -23,141 +25,129 @@ header {
 }
 
 header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #e8f5e9;
+}
+
+/* Section Titles */
+section h2 {
     font-size: 2.5rem;
     font-weight: 700;
-}
-
-section {
-    margin: 40px auto;
-    max-width: 1200px;
-}
-
-section h2 {
-    font-size: 2rem;
-    font-weight: 700;
     margin-bottom: 20px;
-    color: #333;
+    color: #2E7D32;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 section h3 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 600;
     margin-top: 20px;
     margin-bottom: 15px;
-    color: #333;
+    color: #444;
 }
 
+/* Paragraphs and Typography */
 p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin-bottom: 20px;
     line-height: 1.8;
     color: #555;
 }
 
-ul {
-    margin-left: 20px;
-    font-size: 1rem;
-    color: #555;
+/* Enhanced Link Styling */
+a {
+    color: #2E7D32;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-ul li {
-    margin-bottom: 10px;
+a:focus {
+    outline: none;
+    border-bottom: 2px solid #1B5E20;
 }
 
 /* Container for Images */
-.plot-container {
-    margin-bottom: 20px;
+#data-cleaning .images-container {
+    display: flex;
+    justify-content: space-around; /* Evenly spaced images */
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+#data-cleaning .plot-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex: 1 1 30%;
+    max-width: 350px;
+    min-width: 300px;
+    margin-bottom: 20px;
+    text-align: center;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
 }
 
-.plot-container img {
+#data-cleaning .plot-container img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Container for Image Gallery */
-#data-cleaning .images-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-    align-items: stretch;
-}
-
-/* Ensure all plot containers are the same height */
-#data-cleaning .plot-container {
-    display: flex;
-    flex-direction: column; /* Stack the image and description vertically */
-    align-items: center;
-    flex: 1 1 30%; /* Flex-grow, flex-shrink, and basis for equal spacing */
-    max-width: 350px; /* Set a maximum width for consistent sizing */
-    min-width: 300px; /* Ensure minimum width for smaller screens */
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-/* Descriptions below each image */
-#data-cleaning .plot-container p {
-    margin-top: 10px; /* Space between the image and description */
-    font-size: 1rem;
-    color: #555;
-    text-align: center;
-}
-
-/* Center the first image (Summary of cleaned data) */
-#data-cleaning .plot-container:first-of-type {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%; /* Make it full width to center properly */
-}
-
-/* Header Section (Fixed Styling for Spacing) */
-header h1 {
-    font-size: 3rem;
     margin-bottom: 10px;
 }
 
-/* Small Typography Adjustments for Accessibility */
-p, ul {
-    font-size: 1.1rem;
-    line-height: 1.7;
+#data-cleaning .plot-container p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #666;
+    text-align: center;
 }
 
-/* Flexbox Adjustment for Centering Text and Improving Flow */
-#introduction {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-/* Background Enhancements */
-body {
-    background: linear-gradient(to bottom, #fafafa, #e0e0e0);
-}
-
-/* Link Styling */
-a {
-    color: #4CAF50;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Footer, if you add one later */
+/* Footer Styling */
 footer {
-    background-color: #333;
+    background: #2E7D32;
     color: white;
-    padding: 15px;
+    padding: 20px;
     text-align: center;
     font-size: 1rem;
-    margin-top: 40px;
+    border-top: 4px solid #1B5E20;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #e8f5e9;
+}
+
+footer a {
+    color: #c8e6c9;
+    font-weight: bold;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+
+    #data-cleaning .images-container {
+        flex-direction: column;
+        gap: 40px;
+    }
 }
