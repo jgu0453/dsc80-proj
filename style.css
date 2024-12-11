@@ -108,11 +108,22 @@ ul ul {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Center the single image for data_cleaning.png */
+.plot-container img[data-cleaning="true"] {
+    display: block; /* Ensure it's treated as a block element */
+    margin: 0 auto; /* Center the image horizontally */
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Container for the 3 images */
 #data-cleaning .images-container {
     display: flex;
-    justify-content: center; /* Center all plot containers */
+    justify-content: space-between; /* Ensure proper spacing */
     gap: 20px; /* Space between each container */
-    flex-wrap: wrap; /* Wrap containers to a new line if needed */
+    flex-wrap: nowrap; /* Prevent wrapping for this row */
     margin-top: 20px;
     align-items: stretch; /* Make all containers equal height */
 }
