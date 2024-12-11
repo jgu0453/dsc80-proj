@@ -262,10 +262,77 @@
 
     <section id="fairness-analysis">
         <h2>Fairness Analysis</h2>
-        <p>The model was evaluated for fairness based on the "side" (Blue vs. Red). Accuracy was consistent across groups (Blue: 96.7%, Red: 96.6%), suggesting no significant bias.</p>
+    
+        <h3>Choice of Groups</h3>
+        <p>In this fairness analysis, we focus on the <strong>"side"</strong> column as the sensitive attribute. The two groups are:</p>
+        <ul>
+            <li><strong>Group X:</strong> The "Red" side</li>
+            <li><strong>Group Y:</strong> The "Blue" side</li>
+        </ul>
+        <p>We aim to evaluate whether the model's performance differs between these two groups to assess fairness. A model is considered fair if its performance (e.g., accuracy) is similar across different groups, without favoring one over the other.</p>
+    
+        <h3>Evaluation Metric</h3>
+        <p>The evaluation metric used for this fairness analysis is <strong>accuracy</strong>, which measures the percentage of correct predictions for each group. We calculate the accuracy for both the Red and Blue sides to determine if there is any performance disparity between them.</p>
+    
+        <h3>Hypotheses</h3>
+        <p>We will test whether the model performs equally well on both sides:</p>
+        <ul>
+            <li><strong>Null Hypothesis (H₀):</strong> There is no significant difference in accuracy between the Red and Blue sides (i.e., the model's performance is independent of the "side" attribute).</li>
+            <li><strong>Alternative Hypothesis (H₁):</strong> There is a significant difference in accuracy between the Red and Blue sides (i.e., the model's performance depends on the "side" attribute).</li>
+        </ul>
+    
+        <h3>Test Statistic and Significance Level</h3>
+        <p>The test statistic used will be the difference in accuracy between the Red and Blue sides. We will use a <strong>two-sample t-test</strong> to compare the accuracy scores of the two groups. The significance level (α) is set to 0.05.</p>
+    
+        <h3>Results</h3>
+        <p>The performance of the model by side was as follows:</p>
+        <pre>
+        Accuracy by Side:
+        Side Blue: 0.9668
+        Side Red: 0.9662
+        </pre>
+    
+        <h3>Confusion Matrix and Classification Report by Side</h3>
+        <p>We also analyzed the confusion matrix and classification report for each side. This breakdown helps us better understand how the model performs for each group in terms of precision, recall, and f1-score.</p>
+    
+        <pre>
+        Confusion Matrix for Side Blue:
+        [[781  33]
+         [ 23 849]]
+        
+        Classification Report for Side Blue:
+                    precision    recall  f1-score   support
+    
+               0       0.97      0.96      0.97       814
+               1       0.96      0.97      0.97       872
+    
+        accuracy                           0.97      1686
+       macro avg       0.97      0.97      0.97      1686
+    weighted avg       0.97      0.97      0.97      1686
+    
+        Confusion Matrix for Side Red:
+        [[858  27]
+         [ 30 771]]
+        
+        Classification Report for Side Red:
+                    precision    recall  f1-score   support
+    
+               0       0.97      0.97      0.97       885
+               1       0.97      0.96      0.97       796
+    
+        accuracy                           0.97      1686
+       macro avg       0.97      0.97      0.97      1686
+    weighted avg       0.97      0.97      0.97      1686
+        </pre>
+    
+        <h3>Conclusion</h3>
+        <p>Based on the accuracy scores and the classification reports, the model performs very similarly on both the Red and Blue sides, with only a very slight difference in accuracy (0.9668 for Blue vs. 0.9662 for Red). Both groups have high accuracy, precision, recall, and f1-scores, showing that the model is performing well across both sides.</p>
+        <p>Thus, we fail to reject the null hypothesis (H₀) and conclude that the model's performance does not significantly depend on the "side" attribute. This indicates that the model is fairly balanced and performs similarly across both the Red and Blue sides. There is no significant disparity in model performance between the two groups, suggesting the model is fair with respect to the sensitive attribute "side".</p>
+    
+        <!-- Optional Plot Visualization -->
         <div class="plot-container">
-            <h3>Confusion Matrix by Side</h3>
-            [Insert Plot Placeholder]
+            <h3>Fairness Analysis Visualization</h3>
+            <img src="fairness_analysis_plot.png" alt="Fairness Analysis Plot">
         </div>
     </section>
 
