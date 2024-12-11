@@ -79,25 +79,31 @@
     </section>
 
     <section id="missingness">
-    <h2>Assessment of Missingness</h2>
-        <img src="missing.png">
-    <p>The column <strong>"gold_per_minute"</strong> in the dataset is suspected to be <strong>NMAR</strong> (Not Missing At Random). This is because missing values in this column may depend on the game’s completeness. Specifically, incomplete games or games with early terminations could lead to missing values in the <strong>"gold_per_minute"</strong> metric. For instance, if a match ends before reaching certain key timestamps, there may be insufficient data to calculate this feature, resulting in missing values.</p>
-    
-    <p>To investigate this further, we performed a missingness dependency test, analyzing whether the missingness of the <strong>"gold_per_minute"</strong> column depends on the game length. The test statistic and p-value help assess the relationship between the missingness of this column and the <strong>"gamelength"</strong> feature.</p>
-
-    <div class="plot-container">
-        <h3>Permutation Test for Missingness</h3>
+        <h2>Assessment of Missingness</h2>
         
-        <p>The observed test statistic and the p-value indicate a significant relationship between missingness and game length. Specifically, a p-value of 0.0 suggests that the missingness of <strong>"gold_per_minute"</strong> is strongly dependent on the <strong>"gamelength"</strong> feature, reinforcing the hypothesis that the missing data may be NMAR.</p>
-        
-        <!-- Plotly or static plot for permutation test -->
-        <div id="permutation-test-plot">
-            <img src="p_test.png">
+        <!-- First Image: Missingness Overview -->
+        <div class="plot-container">
+            <h3>Missingness Overview</h3>
+            <img src="missing.png" alt="Overview of Missingness">
         </div>
         
-        <p>The plot above shows the empirical distribution of the test statistic from 1000 permutations of the data. The red dashed line represents the observed statistic, providing a visual interpretation of how extreme the observed value is in comparison to the permuted values.</p>
-    </div>
-</section>
+        <p>The column <strong>"gold_per_minute"</strong> in the dataset is suspected to be <strong>NMAR</strong> (Not Missing At Random). This is because missing values in this column may depend on the game’s completeness. Specifically, incomplete games or games with early terminations could lead to missing values in the <strong>"gold_per_minute"</strong> metric. For instance, if a match ends before reaching certain key timestamps, there may be insufficient data to calculate this feature, resulting in missing values.</p>
+        
+        <p>To investigate this further, we performed a missingness dependency test, analyzing whether the missingness of the <strong>"gold_per_minute"</strong> column depends on the game length. The test statistic and p-value help assess the relationship between the missingness of this column and the <strong>"gamelength"</strong> feature.</p>
+    
+        <div class="plot-container">
+            <h3>Permutation Test for Missingness</h3>
+            
+            <p>The observed test statistic and the p-value indicate a significant relationship between missingness and game length. Specifically, a p-value of 0.0 suggests that the missingness of <strong>"gold_per_minute"</strong> is strongly dependent on the <strong>"gamelength"</strong> feature, reinforcing the hypothesis that the missing data may be NMAR.</p>
+            
+            <!-- Second Image: Permutation Test Plot -->
+            <div id="permutation-test-plot">
+                <img src="p_test.png" alt="Permutation Test Distribution">
+            </div>
+            
+            <p>The plot above shows the empirical distribution of the test statistic from 1000 permutations of the data. The red dashed line represents the observed statistic, providing a visual interpretation of how extreme the observed value is in comparison to the permuted values.</p>
+        </div>
+    </section>
     
     <section id="hypothesis-testing">
         <h2>Hypothesis Testing</h2>
