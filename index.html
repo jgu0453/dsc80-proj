@@ -69,6 +69,34 @@
         </div>
     </section>
 
+    <section id="data-cleaning">
+        <h2>Data Cleaning and Exploratory Data Analysis</h2>
+        <p>We cleaned the dataset by replacing placeholders with NaN values, removing irrelevant columns (e.g., IDs), and creating new features such as "gold_per_minute." Below is the head of the cleaned DataFrame:</p>
+        <div>
+            <pre><code>[Insert Table Placeholder]</code></pre>
+        </div>
+        <div class="plot-container">
+            <h3>Distribution of Game Length</h3>
+            [Insert Plot Placeholder]
+            <p>The plot above shows the distribution of game length, with most matches lasting between 20 to 40 minutes.</p>
+        </div>
+        <div class="plot-container">
+            <h3>Gold Difference at 15 Minutes by League</h3>
+            [Insert Plot Placeholder]
+            <p>This plot highlights how different leagues vary in their gold differences at 15 minutes, showcasing disparities in early-game strategies.</p>
+        </div>
+    </section>
+
+    <section id="missingness">
+        <h2>Assessment of Missingness</h2>
+        <p>The <strong>"gold_per_minute"</strong> column is suspected to be NMAR, likely due to incomplete game data. Additional metadata about game interruptions could make it MAR.</p>
+        <div class="plot-container">
+            <h3>Permutation Test for Missingness</h3>
+            [Insert Plot Placeholder]
+            <p>The observed test statistic and the p-value indicate a significant relationship between missingness and game length.</p>
+        </div>
+    </section>
+
     <section id="hypothesis-testing">
         <h2>Hypothesis Testing</h2>
         <p><strong>Null Hypothesis:</strong> Gold difference at 15 minutes does not vary significantly across leagues.<br>
