@@ -108,6 +108,13 @@ ul ul {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
+#data-cleaning .images-container img:first-of-type {
+    display: block;
+    margin: 0 auto; /* This centers the first image */
+    max-width: 100%; /* Ensure the image fits within the container */
+    height: auto; /* Keep aspect ratio intact */
+}
+
 #data-cleaning .images-container {
     display: flex;
     justify-content: space-between; /* Ensure proper spacing */
