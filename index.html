@@ -165,7 +165,49 @@
 
     <section id="baseline-model">
         <h2>Baseline Model</h2>
-        <p>The baseline model uses features like "goldat15" and one-hot encoded champion picks. It achieved an accuracy of 69%, indicating room for improvement.</p>
+        
+        <h3>Model Overview</h3>
+        <p>The baseline predictive model aims to predict the match result based on several features. The model is built using logistic regression, a simple and interpretable classifier. The features included in the model are:</p>
+        
+        <ul>
+            <li><strong>Quantitative:</strong> 1 feature - "goldat15" (gold earned at 15 minutes).</li>
+            <li><strong>Nominal:</strong> 6 features - "pick1", "pick2", "pick3", "pick4", "pick5" (champion picks for the game), and binary outcomes for "firstblood", "firstdragon", and "firstherald" (whether the team secured the first blood, first dragon, or first herald).</li>
+        </ul>
+    
+        <h3>Feature Preprocessing</h3>
+        <p>We applied the following preprocessing steps to prepare the data for modeling:</p>
+        <ul>
+            <li>We dropped any rows with missing values in the selected feature columns.</li>
+            <li>We encoded categorical features (e.g., champion picks and first objectives) using one-hot encoding to transform them into binary columns.</li>
+            <li>The numerical feature ("goldat15") was standardized to have zero mean and unit variance using the StandardScaler.</li>
+        </ul>
+    
+        <h3>Model Performance</h3>
+        <p>The model was trained on the training set and evaluated on the test set. The performance of the model was assessed using accuracy and a classification report. The results are as follows:</p>
+        <ul>
+            <li><strong>Accuracy:</strong> 0.69</li>
+            <li><strong>Classification Report:</strong></li>
+        </ul>
+        <pre>
+            precision    recall  f1-score   support
+    
+               0       0.69      0.71      0.70      1699
+               1       0.69      0.68      0.69      1673
+    
+        accuracy                           0.69      3372
+        macro avg       0.69      0.69      0.69      3372
+        weighted avg    0.69      0.69      0.69      3372
+        </pre>
+    
+        <h3>Interpretation of Model Performance</h3>
+        <p>The baseline model achieved an accuracy of 0.69, which indicates that it correctly predicts the match result 69% of the time. The classification report further reveals that the model performs equally well in predicting both classes (team winning or losing), with similar precision, recall, and f1-scores for both classes. Specifically, class 0 (team winning) has a precision of 0.69, recall of 0.71, and an f1-score of 0.70, while class 1 (team losing) has a precision of 0.69, recall of 0.68, and an f1-score of 0.69.</p>
+    
+        <h3>Is the Model Good?</h3>
+        <p>Given the accuracy and balanced performance across both classes, the baseline model provides a reasonable performance. While the accuracy is fairly good, there is still room for improvement. The model's performance could benefit from exploring more advanced algorithms, adding additional features, or tuning the hyperparameters to increase the accuracy further.</p>
+    
+        <h3>Conclusion</h3>
+        <p>While the baseline logistic regression model offers a solid starting point, it can be enhanced with more features and other machine learning techniques to improve its prediction accuracy and robustness.</p>
+    
     </section>
 
     <section id="final-model">
