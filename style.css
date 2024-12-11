@@ -92,13 +92,6 @@ img {
     margin-bottom: 20px;
 }
 
-/* Center the first image in the Data Cleaning section */
-#data-cleaning .plot-container:first-of-type {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 /* Header Section (Fixed Styling for Spacing) */
 header h1 {
     font-size: 3rem;
@@ -129,16 +122,3 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
-/* Footer, if you add one later */
-footer {
-    background-color: #333;
-    color: white;
-    padding: 15px;
-    text-align: center;
-    font-size: 1rem;
-    margin-top: 40px;
-}
