@@ -92,10 +92,11 @@ img {
     margin-bottom: 20px;
 }
 
-/* Image Tooltip Styling */
-.plot-container img:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease-in-out;
+/* Center the first image in the Data Cleaning section */
+#data-cleaning .plot-container:first-of-type {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Header Section (Fixed Styling for Spacing) */
