@@ -109,7 +109,7 @@ ul ul {
 }
 
 /* Center the first image (Summary of cleaned data) */
-#data-cleaning .plot-container:first-of-type {
+#data-cleaning > .plot-container:first-of-type {
     display: flex;
     justify-content: center;
     align-items: center;
