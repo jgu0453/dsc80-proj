@@ -37,8 +37,22 @@
 
     <section id="introduction">
         <h2>Introduction</h2>
-        <p>This project analyzes a dataset from League of Legends esports matches to determine how key performance indicators (KPIs) influence game outcomes. We focus on the question: "How does gold difference at key timestamps affect win rates across different leagues?"</p>
-        <p>The dataset contains 40164 rows and includes columns such as <strong>"goldat15"</strong> (gold difference at 15 minutes), <strong>"result"</strong> (win/loss), and <strong>"league"</strong> (the league the match belongs to).</p>
+        <p>Competitive esports, particularly League of Legends (LoL), has become a global phenomenon, captivating millions of fans worldwide. In this project, we delve into the nuances of team performance and explore the factors that lead to victory in professional LoL matches. Using a rich dataset from Oracle's Elixir, we aim to answer a central question: How do key performance indicators (KPIs) such as gold difference at various timestamps influence win rates across different teams and regions?</p>
+        <p>This dataset provides detailed match statistics from the 2022 LoL esports season, including information about teams, players, game outcomes, and numerous performance metrics. By analyzing these factors, we can uncover trends and insights that highlight what it takes to achieve competitive success in the esports arena. This question matters not just to fans seeking to understand their favorite teams better but also to analysts, players, and organizations aiming to gain a competitive edge.</p>
+        <h3>Dataset Overview</h3>
+        <p><strong>Total Rows:</strong> 150180</p>
+        <p><strong>Relevant Columns:</strong></p>
+        <ul>
+            <li><strong>teamname:</strong> Name of the team.</li>
+            <li><strong>result:</strong> Match outcome (win or loss).</li>
+            <li><strong>goldat10, goldat15, goldat20:</strong> Total gold earned by the team at 10, 15, and 20 minutes.</li>
+            <li><strong>golddiffat10, golddiffat15, golddiffat20:</strong> Gold difference between the team and its opponent at 10, 15, and 20 minutes.</li>
+            <li><strong>kills, deaths, assists:</strong> Kill, death, and assist counts for the team.</li>
+            <li><strong>towers, opp_towers:</strong> Number of towers destroyed by the team and their opponent.</li>
+            <li><strong>dragons, opp_dragons:</strong> Number of dragons secured by the team and their opponent.</li>
+        </ul>
+        <p>These columns collectively offer insights into team strategies, early-game dominance, and how specific metrics correlate with the likelihood of winning a match.</p>
+        <p>By examining this dataset, we aim to bring clarity to the role of key in-game metrics and identify the patterns that separate winning teams from the rest. Whether you're an esports enthusiast or a data analyst, this exploration promises to provide valuable insights into the dynamic world of competitive gaming.</p>
     </section>
 
     <section id="data-cleaning">
