@@ -109,9 +109,10 @@ ul ul {
 }
 
 /* Center the single image for data_cleaning.png */
-.plot-container img[data-cleaning="true"] {
+#data-cleaning .plot-container img[src="data_cleaning.png"] {
     display: block; /* Ensure it's treated as a block element */
-    margin: 0 auto; /* Center the image horizontally */
+    margin-left: auto; /* Center the image horizontally */
+    margin-right: auto; /* Center the image horizontally */
     max-width: 100%;
     height: auto; /* Ensure full image is visible */
     border-radius: 8px;
