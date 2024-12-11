@@ -7,16 +7,16 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f9f9f9;
+    background-color: #f3f7fa; /* Light modern background */
     line-height: 1.6;
     padding: 0 15px;
     color: #333;
-    background: linear-gradient(to bottom, #ffffff, #f1f1f1);
+    background: linear-gradient(to bottom, #ffffff, #f0f4f8); /* Subtle gradient */
 }
 
 /* Header Section */
 header {
-    background: linear-gradient(90deg, #4CAF50, #2E7D32);
+    background: linear-gradient(90deg, #007bff, #0056b3); /* Blue gradient for header */
     color: white;
     padding: 20px;
     text-align: center;
@@ -34,7 +34,7 @@ header h1 {
 header p {
     font-size: 1.2rem;
     font-weight: 300;
-    color: #e8f5e9;
+    color: #cfe3fc;
 }
 
 /* Section Titles */
@@ -42,9 +42,10 @@ section h2 {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 20px;
-    color: #2E7D32;
+    color: #0056b3; /* Dark blue for titles */
     text-align: center;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 section h3 {
@@ -65,20 +66,15 @@ p {
 
 /* Enhanced Link Styling */
 a {
-    color: #2E7D32;
+    color: #0056b3;
     text-decoration: none;
     font-weight: bold;
-}
-
-a:focus {
-    outline: none;
-    border-bottom: 2px solid #1B5E20;
 }
 
 /* Container for Images */
 #data-cleaning .images-container {
     display: flex;
-    justify-content: space-around; /* Evenly spaced images */
+    justify-content: space-around;
     gap: 20px;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -105,6 +101,7 @@ a:focus {
     height: auto;
     border-radius: 8px;
     margin-bottom: 10px;
+    border: 2px solid #007bff; /* Subtle border to add emphasis */
 }
 
 #data-cleaning .plot-container p {
@@ -116,23 +113,23 @@ a:focus {
 
 /* Footer Styling */
 footer {
-    background: #2E7D32;
+    background: #0056b3; /* Matches the header for a cohesive look */
     color: white;
     padding: 20px;
     text-align: center;
     font-size: 1rem;
-    border-top: 4px solid #1B5E20;
+    border-top: 4px solid #004080;
     box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
 }
 
 footer p {
     margin: 5px 0;
     font-size: 1rem;
-    color: #e8f5e9;
+    color: #cfe3fc;
 }
 
 footer a {
-    color: #c8e6c9;
+    color: #ffffff;
     font-weight: bold;
 }
 
