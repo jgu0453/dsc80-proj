@@ -113,7 +113,7 @@ ul ul {
     display: block; /* Ensure it's treated as a block element */
     margin: 0 auto; /* Center the image horizontally */
     max-width: 100%;
-    height: auto;
+    height: auto; /* Ensure full image is visible */
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
@@ -146,8 +146,8 @@ ul ul {
 
 #data-cleaning .plot-container img {
     width: 100%; /* Make images scale to container width */
-    height: 200px; /* Fix a consistent height for all images */
-    object-fit: cover; /* Maintain aspect ratio and fill the container */
+    height: auto; /* Ensure full image is visible */
+    object-fit: contain; /* Maintain aspect ratio without cropping */
     border-radius: 8px;
     margin-bottom: 10px;
     border: 2px solid #007bff; /* Subtle border for emphasis */
